@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interaktive Übersichtskarte — KONTUR GmbH</title>
+<meta name="description" content="Digitale Wegeleitsysteme für Museen, Gebäude, Shops und Freizeiteinrichtungen: Ein Fingertipp auf einen Standort zeigt bspw. Weg, Distanz und Zusatzinfos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= ICON SPRITE ================= -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="icon-map" viewBox="0 0 24 24">
+      <polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"/>
+      <line x1="9" y1="3" x2="9" y2="18"/>
+      <line x1="15" y1="6" x2="15" y2="21"/>
+    </symbol>
+  </defs>
+</svg>
+
+<main class="page">
+  <div class="container">
+
+    <!-- Interaktive Übersichtskarte -->
+    <article class="example-card reveal">
+      <span class="example-tag">Referenz &middot; Standortmarketing &amp; Besucherinformation</span>
+      <div class="example-icon"><svg class="icon"><use href="#icon-map"></use></svg></div>
+      <h3>Interaktive Übersichtskarte</h3>
+      <p>Digitale Wegeleitsysteme für Museen, Gebäude, Shops und Freizeiteinrichtungen: Ein Fingertipp auf einen Standort zeigt bspw. Weg, Distanz und Zusatzinfos.</p>
+      <div class="map-mock">
+        <button type="button" class="map-pin" style="top:28%; left:22%" data-title="Tourismusbüro" data-text="Öffnungszeiten, Zimmervermittlung und kostenlose Stadtpläne direkt am Marktplatz &middot; Mo&ndash;Sa 9&ndash;17 Uhr.">
+          <span class="map-pin-label">Tourismusbüro</span>
+        </button>
+        <button type="button" class="map-pin" style="top:60%; left:48%" data-title="Stadtmuseum" data-text="Heute geöffnet bis 18 Uhr. Sonderausstellung &bdquo;Stadtgeschichte digital&ldquo; sowie 14:30 Uhr öffentliche Führung.">
+          <span class="map-pin-label">Stadtmuseum</span>
+        </button>
+        <button type="button" class="map-pin map-pin--active" style="top:40%; left:74%" data-title="Rathaus" data-text="Nächste Bürgersprechstunde: Donnerstag 16 Uhr. Rathausführungen jeden ersten Samstag im Monat, Treffpunkt Eingangshalle.">
+          <span class="map-pin-label">Rathaus</span>
+        </button>
+      </div>
+      <div class="map-popup" id="mapPopup" hidden>
+        <button type="button" class="map-popup-close" id="mapPopupClose" aria-label="Popup schließen">&times;</button>
+        <h4 class="map-popup-title" id="mapPopupTitle"></h4>
+        <p class="map-popup-text" id="mapPopupText"></p>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
